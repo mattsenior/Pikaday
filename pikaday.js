@@ -192,6 +192,9 @@
         // how many months are visible (not implemented yet)
         numberOfMonths: 1,
 
+        // show a dropdown-like down-arrow next to the year label
+        showDownArrowForYear: false,
+
         // internationalization
         i18n: {
             previousMonth : 'Previous Month',
@@ -260,7 +263,7 @@
 
     renderTitle = function(instance)
     {
-        var i, j, arr,
+        var i, j, arr, labelClasses,
             opts = instance._o,
             month = instance._m,
             year  = instance._y,
@@ -291,7 +294,14 @@
                 arr.push('<option value="' + i + '"' + (i === year ? ' selected': '') + '>' + (i) + '</option>');
             }
         }
-        html += '<div class="pika-label">' + year + '<select class="pika-select pika-select-year">' + arr.join('') + '</select></div>';
+
+        labelClasses = ['pika-label'];
+
+        if (opts.showDownArrowForYear) {
+            labelClasses.push('is-obviously-a-dropdown');
+        }
+
+        html += '<div class="' + labelClasses.join(' ') + '">' + year + '<select class="pika-select pika-select-year">' + arr.join('') + '</select></div>';
 
         if (isMinYear && (month === 0 || opts.minMonth >= month)) {
             prev = false;

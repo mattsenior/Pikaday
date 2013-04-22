@@ -45,6 +45,24 @@
     font-weight: bold;
     background-color: #fff;
 }
+.pika-label.is-obviously-a-dropdown {
+    padding-right: 19px;
+}
+.pika-label.is-obviously-a-dropdown:after {
+    content: '';
+    width: 14px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    background-color: transparent;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAUCAYAAAC9BQwsAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QQWETMVZtRDTgAAADtJREFUOMvlk0EKACAMwzr/H/DH8w3Gi7BAj6VdYdXdMaxIJhif2En6UhgzJhlTG3MzZjDM2uQbasA/HkJrN64NTSMAAAAAAElFTkSuQmCC);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 75% auto;
+    opacity: .5;
+}
 .pika-title select {
     cursor: pointer;
     position: absolute;
